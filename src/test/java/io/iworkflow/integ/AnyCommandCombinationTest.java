@@ -36,7 +36,7 @@ class AnyCommandCombinationTest {
         } catch (WorkflowUncompletedException e) {
             Assertions.assertEquals(runId, e.getRunId());
             Assertions.assertEquals(WorkflowStatus.FAILED, e.getClosedStatus());
-            Assertions.assertEquals(WorkflowErrorType.STATE_API_FAIL_MAX_OUT_RETRY_ERROR_TYPE, e.getErrorSubType());
+            Assertions.assertEquals(WorkflowErrorType.STATE_API_FAIL_ERROR_TYPE, e.getErrorSubType());
             Assertions.assertTrue(e.getErrorMessage().contains("CommandNotFoundException: Found unknown commandId in the combination list"));
             Assertions.assertEquals(0, e.getStateResultsSize());
             return;

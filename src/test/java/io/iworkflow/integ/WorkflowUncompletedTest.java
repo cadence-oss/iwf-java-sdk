@@ -212,7 +212,7 @@ public class WorkflowUncompletedTest {
         } catch (WorkflowUncompletedException e) {
             Assertions.assertEquals(runId, e.getRunId());
             Assertions.assertEquals(WorkflowStatus.FAILED, e.getClosedStatus());
-            Assertions.assertEquals(WorkflowErrorType.STATE_API_FAIL_MAX_OUT_RETRY_ERROR_TYPE, e.getErrorSubType());
+            Assertions.assertEquals(WorkflowErrorType.STATE_API_FAIL_ERROR_TYPE, e.getErrorSubType());
             Assertions.assertTrue(e.getErrorMessage().contains("test api failing"));
             Assertions.assertEquals(0, e.getStateResultsSize());
             return;
@@ -235,7 +235,7 @@ public class WorkflowUncompletedTest {
         } catch (WorkflowUncompletedException e) {
             Assertions.assertEquals(runId, e.getRunId());
             Assertions.assertEquals(WorkflowStatus.FAILED, e.getClosedStatus());
-            Assertions.assertEquals(WorkflowErrorType.STATE_API_FAIL_MAX_OUT_RETRY_ERROR_TYPE, e.getErrorSubType());
+            Assertions.assertEquals(WorkflowErrorType.STATE_API_FAIL_ERROR_TYPE, e.getErrorSubType());
             Assertions.assertTrue(
                     e.getErrorMessage().contains("activity StartToClose timeout"),
                     e.getErrorMessage()
@@ -260,7 +260,7 @@ public class WorkflowUncompletedTest {
         } catch (WorkflowUncompletedException e) {
             Assertions.assertEquals(runId, e.getRunId());
             Assertions.assertEquals(WorkflowStatus.FAILED, e.getClosedStatus());
-            Assertions.assertEquals(WorkflowErrorType.STATE_API_FAIL_MAX_OUT_RETRY_ERROR_TYPE, e.getErrorSubType());
+            Assertions.assertEquals(WorkflowErrorType.STATE_API_FAIL_ERROR_TYPE, e.getErrorSubType());
             Assertions.assertTrue(
                     e.getErrorMessage().contains("State decision returned by execute method cannot be null or empty")
             );
